@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="RELT offers free weekly one-on-one English tutoring to refugees and asylum seekers across Australia">
   <title>RELT - Refugee English Language Tutoring</title>
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
@@ -21,385 +23,384 @@
       box-sizing: border-box;
     }
 
-    @font-face {
-      font-family: 'Kalam';
-      src: url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
-    }
-
     body {
       font-family: 'Noto Sans', sans-serif;
       line-height: 1.6;
       color: #333;
-      background: linear-gradient(135deg, #fff 0%, #fff5f1 100%);
-      min-height: 100vh;
+      background: #fafafa;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+    /* Skip to main content for screen readers */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      top: 0;
     }
 
     header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: white;
-      border-bottom: 3px solid #f16e27;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .logo-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-
-    .icon-wrapper {
-      width: 80px;
-      height: 80px;
       background: #f16e27;
-      border-radius: 50%;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(241, 110, 39, 0.3);
     }
 
-    .icon-wrapper svg {
-      width: 50px;
-      height: 50px;
-      fill: white;
+    .header-logo {
+      height: 60px;
+      width: auto;
+      display: block;
     }
 
-    h1 {
-      color: #000;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
+    .contact-header-btn {
+      background: white;
       color: #f16e27;
-      font-size: 1.2rem;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
       font-weight: 600;
-      letter-spacing: 1px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .handwritten {
-      font-family: 'Kalam', cursive;
-      color: #f16e27;
-      font-size: 1.1rem;
-      margin-top: 20px;
-      font-weight: 400;
+    .contact-header-btn:hover,
+    .contact-header-btn:focus {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      outline: 2px solid white;
+      outline-offset: 2px;
     }
 
     main {
-      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
     .intro-section {
       background: white;
-      padding: 50px;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-      margin-bottom: 50px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intro-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(180deg, #f16e27, #f12727);
-    }
-
-    .intro-text {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #333;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .stat {
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
       text-align: center;
     }
 
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #f16e27;
+    .main-logo {
+      width: 350px;
+      height: auto;
+      margin: 0 auto 25px;
       display: block;
     }
 
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat {
+      padding: 15px;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f16e27;
+      margin-bottom: 5px;
+    }
+
     .stat-label {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #666;
-      margin-top: 5px;
+    }
+
+    .get-involved-section {
+      margin-bottom: 40px;
+    }
+
+    .get-involved-section h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #000;
     }
 
     .action-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      margin-bottom: 50px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .card {
       background: white;
-      padding: 40px 30px;
-      border-radius: 15px;
+      padding: 35px 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-      border: 2px solid transparent;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(241, 110, 39, 0.15);
-      border-color: #f16e27;
-    }
-
-    .card h2 {
+    .card h3 {
       color: #000;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
     }
 
     .card p {
       color: #666;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       line-height: 1.6;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 35px;
+      padding: 12px 30px;
       background: #f16e27;
       color: white;
       text-decoration: none;
-      border-radius: 50px;
+      border-radius: 25px;
       font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 1rem;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn:focus {
       background: #d95b20;
-      transform: scale(1.05);
-      box-shadow: 0 5px 20px rgba(241, 110, 39, 0.4);
+      transform: translateY(-2px);
+      outline: 2px solid #f16e27;
+      outline-offset: 2px;
     }
 
     .contact-section {
       background: white;
-      padding: 40px;
-      border-radius: 15px;
+      padding: 35px;
+      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
 
     .contact-section h2 {
       color: #000;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+
+    .contact-section p {
+      margin-bottom: 15px;
+      color: #666;
     }
 
     .email-link {
       color: #f16e27;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
-      padding: 10px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
     }
 
-    .email-link:hover {
-      transform: scale(1.05);
-      text-decoration: underline;
+    .email-link:hover,
+    .email-link:focus {
+      border-bottom-color: #f16e27;
+      outline: none;
     }
 
     footer {
+      background: white;
       text-align: center;
-      padding: 30px;
+      padding: 25px;
+      margin-top: 40px;
       color: #666;
       font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
     }
 
     @media (max-width: 768px) {
+      .header-logo {
+        height: 45px;
+      }
+
+      .header-container {
+        gap: 15px;
+      }
+
+      .main-logo {
+        width: 200px;
+      }
+
       h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
 
       .intro-section {
-        padding: 30px 20px;
-      }
-
-      .stats {
-        gap: 30px;
+        padding: 25px 20px;
       }
 
       .stat-number {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
 
       .card {
-        padding: 30px 20px;
+        padding: 25px 20px;
       }
     }
 
-    /* Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
+    /* Focus styles for keyboard navigation */
+    *:focus-visible {
+      outline: 2px solid #f16e27;
+      outline-offset: 2px;
+    }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    /* Reduced motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
       }
     }
 
-    .fade-in {
-      animation: fadeInUp 0.8s ease-out;
+    /* Visually hidden but accessible to screen readers */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
   </style>
 </head>
 
 <body>
+  <a href="#main"
+     class="skip-link">Skip to main content</a>
+
   <header>
-    <div class="container">
-      <div class="logo-section">
-        <div class="icon-wrapper">
-          <!-- Simple book/education icon -->
-          <svg viewBox="0 0 24 24"
-               xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
-            <path d="M12 6l6 3v6c0 3.31-2.29 6.44-5.4 7.68-.38.15-.82.15-1.2 0C8.29 21.44 6 18.31 6 15V9l6-3z"
-                  fill="#f16e27" />
-            <circle cx="12"
-                    cy="12"
-                    r="2"
-                    fill="white" />
-          </svg>
-        </div>
-        <div>
-          <h1>RELT</h1>
-          <p class="subtitle">Refugee English Language Tutoring</p>
-        </div>
-      </div>
-      <p class="handwritten">Empowering through education, one conversation at a time</p>
+    <div class="header-container">
+      <img src="relt-logo.png"
+           alt="RELT - Refugee English Language Tutoring"
+           class="header-logo">
+      <nav>
+        <a href="#contact"
+           class="contact-header-btn"
+           aria-label="Contact us">Contact Us</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="intro-section fade-in">
-        <p class="intro-text">
-          <strong>Refugee English Language Tutoring (RELT)</strong> is a charity that offers weekly, one-on-one English
-          tutoring to refugees and asylum seekers across Australia. RELT was founded in 2025 and has already grown to
-          support over 120 weekly participants from more than 25 countries.
-        </p>
-        <div class="stats">
-          <div class="stat">
-            <span class="stat-number">120+</span>
-            <span class="stat-label">Weekly Participants</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">25+</span>
-            <span class="stat-label">Countries Represented</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">1-on-1</span>
-            <span class="stat-label">Personalized Sessions</span>
-          </div>
+  <main id="main">
+    <section class="intro-section"
+             aria-labelledby="intro-heading">
+      <img src="relt-primary.png"
+           alt="RELT Logo"
+           class="main-logo">
+      <p class="intro-text">
+        <strong>RELT</strong> is a charity that offers weekly, one-on-one English tutoring to refugees and asylum
+        seekers across Australia. RELT was founded in 2025 and has already grown to support over 120 weekly participants
+        from more than 25 countries.
+      </p>
+      <div class="stats"
+           role="list"
+           aria-label="RELT statistics">
+        <div class="stat"
+             role="listitem">
+          <span class="stat-number"
+                aria-label="120 plus">120+</span>
+          <span class="stat-label">Weekly Participants</span>
+        </div>
+        <div class="stat"
+             role="listitem">
+          <span class="stat-number"
+                aria-label="25 plus">25+</span>
+          <span class="stat-label">Countries Represented</span>
+        </div>
+        <div class="stat"
+             role="listitem">
+          <span class="stat-number">1-on-1</span>
+          <span class="stat-label">Personalized Sessions</span>
         </div>
       </div>
+    </section>
+
+    <section class="get-involved-section"
+             aria-labelledby="get-involved-heading">
+      <h2 id="get-involved-heading">Get Involved</h2>
 
       <div class="action-cards">
-        <div class="card fade-in">
-          <h2>Become a Tutor</h2>
+        <article class="card">
+          <h3>Become a Tutor</h3>
           <p>Share your knowledge and make a meaningful difference in someone's life. Join our community of volunteer
             tutors.</p>
           <a href="https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUMVU1SVdPRk8yQkZDUFlFNVFPNkZKVDZNRC4u"
              class="btn"
-             target="_blank"
-             rel="noopener noreferrer">
+             aria-label="Apply to become a tutor">
             Apply to Tutor
           </a>
-        </div>
+        </article>
 
-        <div class="card fade-in">
-          <h2>Join as a Tutee</h2>
+        <article class="card">
+          <h3>Join as a Tutee</h3>
           <p>Improve your English skills with personalized, one-on-one tutoring sessions tailored to your needs and
             goals.</p>
           <a href="https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUOUZMTTBEVzE4OFY0QUI1TDlJMDZOSVQwUy4u"
              class="btn"
-             target="_blank"
-             rel="noopener noreferrer">
+             aria-label="Apply for tutoring">
             Apply for Tutoring
           </a>
-        </div>
+        </article>
       </div>
+    </section>
 
-      <div class="contact-section fade-in">
-        <h2>Get in Touch</h2>
-        <p>Have questions or want to learn more about RELT?</p>
-        <a href="mailto:admin@reltutoring.org"
-           class="email-link">admin@reltutoring.org</a>
-      </div>
-    </div>
+    <section class="contact-section"
+             id="contact"
+             aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in Touch</h2>
+      <p>Have questions or want to learn more about RELT?</p>
+      <a href="mailto:admin@reltutoring.org"
+         class="email-link">admin@reltutoring.org</a>
+    </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Refugee English Language Tutoring (RELT). All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 Refugee English Language Tutoring (RELT). All rights reserved.</p>
   </footer>
-
-  <script>
-    // Add fade-in animation on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s ease-out';
-        observer.observe(el);
-      });
-    });
-  </script>
 </body>
 
 </html>
