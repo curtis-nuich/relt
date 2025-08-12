@@ -5,9 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+
+  <!-- Enhanced SEO Meta Tags -->
   <meta name="description"
-        content="RELT offers free weekly one-on-one English tutoring to refugees and asylum seekers across Australia">
-  <title>RELT - Refugee English Language Tutoring</title>
+        content="Refugee English Language Tutoring (RELT) offers free weekly one-on-one English tutoring to refugees and asylum seekers across Australia. Join as a tutor or tutee today.">
+  <meta name="keywords"
+        content="refugee english language tutoring, RELT, refugee tutoring australia, asylum seeker education, english tutoring refugees, volunteer tutoring australia, refugee support australia">
+  <meta name="author"
+        content="Refugee English Language Tutoring">
+  <meta name="robots"
+        content="index, follow">
+
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title"
+        content="RELT - Refugee English Language Tutoring Australia">
+  <meta property="og:description"
+        content="Free weekly one-on-one English tutoring for refugees and asylum seekers across Australia. Join our community of 120+ participants from 25+ countries.">
+  <meta property="og:type"
+        content="website">
+  <meta property="og:url"
+        content="https://reltutoring.org">
+  <meta property="og:image"
+        content="https://reltutoring.org/relt-primary.png">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card"
+        content="summary_large_image">
+  <meta name="twitter:title"
+        content="RELT - Refugee English Language Tutoring">
+  <meta name="twitter:description"
+        content="Free English tutoring for refugees and asylum seekers across Australia">
+
+  <!-- Canonical URL -->
+  <link rel="canonical"
+        href="https://reltutoring.org">
+
+  <title>RELT - Refugee English Language Tutoring Australia | Free English Classes for Refugees</title>
+
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
   <link rel="preconnect"
@@ -15,6 +49,30 @@
         crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NonprofitOrganization",
+    "name": "Refugee English Language Tutoring (RELT)",
+    "alternateName": "RELT",
+    "url": "https://reltutoring.org",
+    "logo": "https://reltutoring.org/relt-primary.png",
+    "description": "RELT offers free weekly one-on-one English tutoring to refugees and asylum seekers across Australia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Australia"
+    },
+    "sameAs": [
+      "https://www.facebook.com/share/16uhhfaGrJ/",
+      "https://linkedin.com/company/relttutoring",
+      "https://www.youtube.com/@reltutoring"
+    ],
+    "email": "admin@reltutoring.org",
+    "foundingDate": "2025"
+  }
+  </script>
 
   <style>
     * {
@@ -30,7 +88,6 @@
       background: #fafafa;
     }
 
-    /* Skip to main content for screen readers */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -123,6 +180,12 @@
       margin-right: auto;
     }
 
+    /* Orange text for RELT organization name */
+    .org-name {
+      color: #f16e27;
+      font-weight: 600;
+    }
+
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -162,7 +225,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -172,6 +235,8 @@
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       text-align: center;
+      display: flex;
+      flex-direction: column;
     }
 
     .card h3 {
@@ -184,6 +249,28 @@
       color: #666;
       margin-bottom: 20px;
       line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    /* YouTube Embed Thumbnail */
+    .youtube-preview {
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio */
+      background: #f0f0f0;
+    }
+
+    .youtube-preview iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .btn {
@@ -249,6 +336,39 @@
       border-top: 1px solid #e0e0e0;
     }
 
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-link:hover,
+    .social-link:focus {
+      color: #f16e27;
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
     @media (max-width: 768px) {
       .header-logo {
         height: 45px;
@@ -276,6 +396,11 @@
 
       .card {
         padding: 25px 20px;
+      }
+
+      .social-links {
+        flex-direction: column;
+        gap: 15px;
       }
     }
 
@@ -331,10 +456,13 @@
       <img src="relt-primary.png"
            alt="RELT Logo"
            class="main-logo">
+      <h1 class="visually-hidden"
+          id="intro-heading">About Refugee English Language Tutoring</h1>
       <p class="intro-text">
-        <strong>RELT</strong> is a charity that offers weekly, one-on-one English tutoring to refugees and asylum
-        seekers across Australia. RELT was founded in 2025 and has already grown to support over 120 weekly participants
-        from more than 25 countries.
+        <span class="org-name">Refugee English Language Tutoring (RELT)</span> is a charity that offers weekly,
+        one-on-one English
+        tutoring to refugees and asylum seekers across Australia. RELT was founded in 2025 and has already grown to
+        support over 120 weekly participants from more than 25 countries.
       </p>
       <div class="stats"
            role="list"
@@ -385,6 +513,25 @@
             Apply for Tutoring
           </a>
         </article>
+
+        <article class="card">
+          <h3>Learn More</h3>
+          <div class="youtube-preview">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLzGJUMA3VO8HzJsTkQw6IHHJQKijKYPDY"
+                    title="RELT YouTube Playlist"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+          </div>
+          <p>Watch our videos to learn more about RELT's mission and see our tutoring in action.</p>
+          <a href="https://youtube.com/playlist?list=PLzGJUMA3VO8HzJsTkQw6IHHJQKijKYPDY&si=itTgvqpFHjH7SqrP"
+             class="btn"
+             aria-label="Watch RELT videos on YouTube"
+             target="_blank"
+             rel="noopener noreferrer">
+            Watch Videos
+          </a>
+        </article>
       </div>
     </section>
 
@@ -399,7 +546,50 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Refugee English Language Tutoring (RELT). All rights reserved.</p>
+    <div class="footer-content">
+      <p>&copy; 2025 Refugee English Language Tutoring (RELT). All rights reserved.</p>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/16uhhfaGrJ/?mibextid=wwXIfr"
+           class="social-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Follow RELT on Facebook">
+          <svg viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+          Facebook
+        </a>
+
+        <a href="https://linkedin.com/company/relttutoring"
+           class="social-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Follow RELT on LinkedIn">
+          <svg viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          LinkedIn
+        </a>
+
+        <a href="https://www.youtube.com/@reltutoring"
+           class="social-link"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Subscribe to RELT on YouTube">
+          <svg viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+          YouTube
+        </a>
+      </div>
+    </div>
   </footer>
 </body>
 
