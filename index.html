@@ -41,366 +41,18 @@
         crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
         rel="stylesheet">
+  <link rel="stylesheet"
+        href="style.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="favicon-32x32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="favicon-16x16.png">
 
-    body {
-      font-family: 'Noto Sans', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #fafafa;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #000;
-      color: white;
-      padding: 8px;
-      text-decoration: none;
-      z-index: 100;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    header {
-      background: #f16e27;
-      padding: 15px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-    }
-
-    .header-logo {
-      height: 60px;
-      width: auto;
-      display: block;
-    }
-
-    .coming-soon-text {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .contact-header-btn {
-      background: white;
-      color: #f16e27;
-      padding: 10px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .contact-header-btn:hover,
-    .contact-header-btn:focus {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .intro-section {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #000;
-    }
-
-    .intro-text {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #333;
-      margin-bottom: 30px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Orange text for RELT organization name */
-    .org-name {
-      color: #f16e27;
-      font-weight: 600;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 30px;
-      text-align: center;
-    }
-
-    .stat {
-      padding: 15px;
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #f16e27;
-      margin-bottom: 5px;
-    }
-
-    .stat-label {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    .get-involved-section {
-      margin-bottom: 40px;
-    }
-
-    .get-involved-section h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 30px;
-      color: #000;
-    }
-
-    .action-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: white;
-      padding: 35px 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card h3 {
-      color: #000;
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-    }
-
-    .card p {
-      color: #666;
-      margin-bottom: 20px;
-      line-height: 1.6;
-      flex-grow: 1;
-    }
-
-    /* YouTube Embed Thumbnail */
-    .youtube-preview {
-      width: 100%;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-      padding-bottom: 56.25%;
-      /* 16:9 aspect ratio */
-      background: #f0f0f0;
-    }
-
-    .youtube-preview iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      background: #f16e27;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 600;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      background: #d95b20;
-      transform: translateY(-2px);
-      outline: 2px solid #f16e27;
-      outline-offset: 2px;
-    }
-
-    .contact-section {
-      background: white;
-      padding: 35px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .contact-section h2 {
-      color: #000;
-      margin-bottom: 15px;
-      font-size: 1.6rem;
-    }
-
-    .contact-section p {
-      margin-bottom: 15px;
-      color: #666;
-    }
-
-    .email-link {
-      color: #f16e27;
-      font-size: 1.2rem;
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .email-link:hover,
-    .email-link:focus {
-      border-bottom-color: #f16e27;
-      outline: none;
-    }
-
-    footer {
-      background: #f16e27;
-      text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-      color: white;
-      font-size: 0.9rem;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      color: white;
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .social-link:hover,
-    .social-link:focus {
-      opacity: 0.8;
-    }
-
-    .social-link svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    @media (max-width: 768px) {
-      .header-logo {
-        height: 45px;
-      }
-
-      .header-container {
-        gap: 15px;
-      }
-
-      .coming-soon-text {
-        display: none;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .intro-section {
-        padding: 25px 20px;
-      }
-
-      .stat-number {
-        font-size: 1.6rem;
-      }
-
-      .card {
-        padding: 25px 20px;
-      }
-
-      .social-links {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-
-    /* Focus styles for keyboard navigation */
-    *:focus-visible {
-      outline: 2px solid #f16e27;
-      outline-offset: 2px;
-    }
-
-    /* Reduced motion for users who prefer it */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
-        animation: none !important;
-      }
-    }
-
-    /* Visually hidden but accessible to screen readers */
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -412,7 +64,6 @@
       <img src="relt-logo.png"
            alt="RELT - Refugee English Language Tutoring"
            class="header-logo">
-      <span class="coming-soon-text">Full website coming soon</span>
       <nav>
         <a href="#contact"
            class="contact-header-btn"
@@ -455,6 +106,25 @@
       </div>
     </section>
 
+    <section class="fundraiser-section"
+             aria-labelledby="fundraiser-heading">
+      <h2 id="fundraiser-heading">Support Our Mission</h2>
+      <div class="fundraiser-content">
+        <div class="fundraiser-text">
+          <h3>Help Us Expand Our Impact</h3>
+          <p>Your donation helps us provide English tutoring to more refugees and asylum seekers across Australia.
+            Every contribution makes a difference in someone's journey to build a new life.</p>
+        </div>
+        <div class="fundraiser-embed">
+          <div class="gfm-embed"
+               data-url="https://www.gofundme.com/f/9zspc-refugee-english-language-tutoring/widget/large?sharesheet=undefined&attribution_id=sl:8b5a8034-7b6d-4de8-aa86-1e1a221cf95a">
+          </div>
+          <script defer
+                  src="https://www.gofundme.com/static/js/embed.js"></script>
+        </div>
+      </div>
+    </section>
+
     <section class="get-involved-section"
              aria-labelledby="get-involved-heading">
       <h2 id="get-involved-heading">Get Involved</h2>
@@ -492,7 +162,7 @@
             </iframe>
           </div>
           <p>Watch our videos to learn more about RELT's mission and see our tutoring in action.</p>
-          <a href="https://youtube.com/playlist?list=PLzGJUMA3VO8HzJsTkQw6IHHJQKijKYPDY&si=itTgvqpFHjH7SqrP"
+          <a href="https://youtube.com/playlist?list=PLzGJUMA3VO8EEz7ijNt0S6skaQdVXM2nh&si=d_Th0OBs3nEharxV"
              class="btn"
              aria-label="Watch RELT videos on YouTube"
              target="_blank"
