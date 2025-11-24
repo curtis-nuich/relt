@@ -56,7 +56,7 @@ export const faqContent = {
         {
           question: "What will I teach?",
           answer:
-            "You'll focus on practical, conversational English tailored to your student's goals—whether that's everyday conversation, job applications, or specific skills.",
+            "You'll focus on practical, conversational English tailored to your student's goals - whether that's everyday conversation, job applications, or specific skills.",
         },
       ],
     },

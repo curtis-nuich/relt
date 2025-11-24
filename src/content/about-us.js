@@ -4,7 +4,7 @@ export const aboutUsContent = {
       id: "our-story",
       title: "Our Story",
       paragraphs: [
-        "Here at RELT, we recognized a critical gap in the services available to refugees and asylum seekers in Australia: the need for language learning support.",
+        "Here at RELT, we recognised a critical gap in the services available to refugees and asylum seekers in Australia: the need for language learning support.",
         "Therefore, we created a simple, accessible, and completely free language tutoring service. We strive to help refugees and asylum seekers both improve their English skills and develop meaningful relationships within the Australian community.",
       ],
     },
