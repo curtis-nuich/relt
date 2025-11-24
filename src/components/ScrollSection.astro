@@ -1,0 +1,39 @@
+---
+export interface Props {
+  id: string;
+  title?: string;
+  class?: string;
+}
+
+const { id, title, class: className } = Astro.props;
+---
+
+<section
+  data-scroll-section={id}
+  id={id}
+  class:list={["scroll-section", className]}
+  aria-labelledby={title ? `${id}-heading` : undefined}
+>
+  {
+    title && (
+      <h2 id={`${id}-heading`} class="section-title">
+        {title}
+      </h2>
+    )
+  }
+  <div class="section-content">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+</style>

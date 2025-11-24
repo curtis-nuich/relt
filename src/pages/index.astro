@@ -1,0 +1,280 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { homeContent } from "../content/home.js";
+---
+
+<BaseLayout
+  title="RELT - Refugee English Language Tutoring Australia | Free English Classes for Refugees"
+  description="Free weekly one-on-one English tutoring for refugees and asylum seekers across Australia. Join our community of 120+ participants from 25+ countries."
+  hasScrollSections={false}
+>
+  <div class="main-content">
+    <!-- Intro Section -->
+    <section class="intro-section" aria-labelledby="intro-heading">
+      <h1 class="visually-hidden" id="intro-heading">
+        About Refugee English Language Tutoring
+      </h1>
+      <p class="intro-text">
+        <span class="org-name">Refugee English Language Tutoring (RELT)</span> is
+        a charity that offers weekly, one-on-one English tutoring to refugees and
+        asylum seekers across Australia. RELT was founded in 2025 and has already
+        grown to support over 120 weekly participants from more than 25 countries.
+      </p>
+      <div class="stats" role="list" aria-label="RELT statistics">
+        {
+          homeContent.hero.stats.map((stat) => (
+            <div class="stat" role="listitem">
+              <span class="stat-number" aria-label={stat.number}>
+                {stat.number}
+              </span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section
+      class="get-involved-section"
+      aria-labelledby="get-involved-heading"
+    >
+      <h2 id="get-involved-heading">Get Involved</h2>
+
+      <div class="action-cards">
+        <article class="card">
+          <h3>Become a Tutor</h3>
+          <p>
+            Share your knowledge and make a meaningful difference in someone's
+            life. Join our community of volunteer tutors.
+          </p>
+          <a
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUMVU1SVdPRk8yQkZDUFlFNVFPNkZKVDZNRC4u"
+            class="btn"
+            aria-label="Apply to become a tutor"
+          >
+            Apply to Tutor
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Join as a Tutee</h3>
+          <p>
+            Improve your English skills with personalized, one-on-one tutoring
+            sessions tailored to your needs and goals.
+          </p>
+          <a
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUOUZMTTBEVzE4OFY0QUI1TDlJMDZOSVQwUy4u"
+            class="btn"
+            aria-label="Apply for tutoring"
+          >
+            Apply for Tutoring
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Learn More</h3>
+          <div class="youtube-preview">
+            <iframe
+              src="https://www.youtube.com/embed/w1XvylJuTGw?list=PLzGJUMA3VO8EEz7ijNt0S6skaQdVXM2nh"
+              title="RELT YouTube Playlist"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <p>
+            Watch our videos to learn more about RELT's mission and see our
+            tutoring in action.
+          </p>
+          <a
+            href="https://youtube.com/playlist?list=PLzGJUMA3VO8EEz7ijNt0S6skaQdVXM2nh&si=2EE_OD9E0lGZfLkp"
+            class="btn"
+            aria-label="Watch RELT videos on YouTube"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch Videos
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      class="contact-section"
+      id="contact"
+      aria-labelledby="contact-heading"
+    >
+      <h2 id="contact-heading">Get in Touch</h2>
+      <p>Have questions or want to learn more about RELT?</p>
+      <a href="mailto:admin@reltutoring.org" class="email-link"
+        >admin@reltutoring.org</a
+      >
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  /* Intro Section - matches original */
+  .intro-section {
+    background: var(--bg-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .org-name {
+    color: var(--primary-orange);
+    font-weight: 600;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .stat {
+    padding: var(--spacing-sm);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+  }
+
+  /* Get Involved Section - matches original */
+  .get-involved-section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .get-involved-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .action-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: var(--bg-white);
+    padding: 35px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+  }
+
+  .card h3 {
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+  }
+
+  .youtube-preview {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: #f0f0f0;
+  }
+
+  .youtube-preview iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Contact Section - matches original */
+  .contact-section {
+    background: var(--bg-white);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+  }
+
+  .contact-section p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .email-link {
+    color: var(--primary-orange);
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .email-link:hover,
+  .email-link:focus {
+    border-bottom-color: var(--primary-orange);
+    outline: none;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .intro-section {
+      padding: 25px 20px;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+    }
+
+    .card {
+      padding: 25px 20px;
+    }
+  }
+</style>

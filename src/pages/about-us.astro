@@ -1,0 +1,101 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ScrollSection from "../components/ScrollSection.astro";
+import { aboutUsContent } from "../content/about-us.js";
+---
+
+<BaseLayout
+  title="About Us - RELT"
+  description="Learn about RELT's mission, team, and how we're helping refugees and asylum seekers through English language education."
+  hasScrollSections={true}
+>
+  {
+    aboutUsContent.sections.map((section) => (
+      <ScrollSection id={section.id} title={section.title}>
+        {section.paragraphs && (
+          <div class="story-content">
+            {section.paragraphs.map((p) => (
+              <p>{p}</p>
+            ))}
+          </div>
+        )}
+
+        {section.intro && <p class="team-intro">{section.intro}</p>}
+
+        {section.cards && (
+          <div class="team-grid">
+            {section.cards.map((card) => (
+              <div class="team-card">
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {section.email && (
+          <div class="contact-content">
+            <p>{section.description}</p>
+            <a href={`mailto:${section.email}`} class="email-link">
+              {section.email}
+            </a>
+          </div>
+        )}
+      </ScrollSection>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  .story-content,
+  .contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .story-content p,
+  .team-intro {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  .team-card {
+    background: var(--bg-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+  }
+
+  .team-card h3 {
+    color: var(--primary-orange);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .contact-content p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .email-link {
+    color: var(--primary-orange);
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .email-link:hover,
+  .email-link:focus {
+    border-bottom-color: var(--primary-orange);
+  }
+</style>

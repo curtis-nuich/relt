@@ -1,0 +1,15 @@
+{
+  "name": "relt",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && npm run copy-root",
+    "copy-root": "cp index.html dist/ && cp style.css dist/ && cp *.png dist/ && cp CNAME dist/ && cp favicon-*.png dist/ 2>/dev/null || true"
+  },
+  "dependencies": {
+    "astro": "^5.16.0"
+  }
+}

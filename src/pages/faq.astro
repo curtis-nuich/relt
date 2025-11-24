@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { faqContent } from "../content/faq.js";
+---
+
+<BaseLayout
+  title="FAQ - RELT"
+  description="Frequently asked questions about RELT's English tutoring program for refugees and asylum seekers."
+  hasScrollSections={false}
+>
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+
+    {
+      faqContent.sections.map((section) => (
+        <div class="faq-section">
+          <h2>{section.category}</h2>
+          {section.questions.map((q) => (
+            <details class="faq-item">
+              <summary>{q.question}</summary>
+              <div class="faq-answer">
+                <p>{q.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .faq-section {
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .faq-section h2 {
+      color: var(--primary-orange);
+      margin-bottom: var(--spacing-lg);
+      text-align: left;
+    }
+
+    .faq-item {
+      background: var(--bg-white);
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-md);
+      box-shadow: var(--shadow-light);
+    }
+
+    .faq-item summary {
+      padding: var(--spacing-md);
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      padding-right: 40px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: var(--spacing-md);
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--primary-orange);
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item summary:hover {
+      color: var(--primary-orange);
+    }
+
+    .faq-answer {
+      padding: 0 var(--spacing-md) var(--spacing-md);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .faq-answer {
+        animation: none;
+      }
+    }
+  </style>
+</BaseLayout>

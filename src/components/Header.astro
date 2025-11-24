@@ -1,0 +1,60 @@
+---
+import Nav from "./Nav.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header role="banner">
+  <div class="header-container">
+    <a href="/v2/" class="logo-link" aria-label="RELT Home">
+      <img
+        src="/v2/relt-logo.png"
+        alt="RELT - Refugee English Language Tutoring"
+        class="header-logo"
+        width="200"
+        height="60"
+      />
+    </a>
+
+    <Nav currentPath={currentPath} />
+  </div>
+</header>
+
+<style>
+  header {
+    background: var(--primary-orange);
+    padding: var(--spacing-sm) 0;
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .header-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .header-logo {
+      height: 45px;
+    }
+  }
+</style>

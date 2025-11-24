@@ -1,0 +1,124 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, description, hasScrollSections = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:image" content={`${Astro.site}relt-primary.png`}>
+  
+  <link rel="canonical" href={canonicalURL}>
+  
+  <title>{title}</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/v2/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/v2/favicon-16x16.png">
+  
+  <style is:global>
+    @import '../styles/global.css';
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <Header />
+  
+  <main id="main">
+    <slot />
+  </main>
+  
+  <Footer />
+  
+  {hasScrollSections && (
+    <script is:inline>
+      // @ts-nocheck
+      // Scroll-based navigation for multi-section pages
+      (function() {
+        'use strict';
+        
+        const sections = document.querySelectorAll('[data-scroll-section]');
+        if (sections.length === 0) return;
+        
+        const observerOptions = {
+          root: null,
+          rootMargin: '-20% 0px -60% 0px',
+          threshold: 0
+        };
+        
+        function handleIntersection(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const sectionId = entry.target.getAttribute('data-scroll-section');
+              const currentPath = window.location.pathname;
+              const newUrl = currentPath + '#' + sectionId;
+              
+              if (window.location.hash !== '#' + sectionId) {
+                history.replaceState(null, '', newUrl);
+              }
+            }
+          });
+        }
+        
+        function addScrollAnimation(section) {
+          const animationObserver = new IntersectionObserver(
+            function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                }
+              });
+            },
+            {
+              root: null,
+              rootMargin: '0px',
+              threshold: 0.1
+            }
+          );
+          
+          animationObserver.observe(section);
+        }
+        
+        function handleInitialHash() {
+          if (window.location.hash) {
+            const targetId = window.location.hash.substring(1);
+            const targetSection = document.querySelector('[data-scroll-section="' + targetId + '"]');
+            
+            if (targetSection) {
+              setTimeout(function() {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }, 100);
+            }
+          }
+        }
+        
+        const observer = new IntersectionObserver(handleIntersection, observerOptions);
+        
+        sections.forEach(function(section) {
+          observer.observe(section);
+          addScrollAnimation(section);
+        });
+        
+        handleInitialHash();
+        window.addEventListener('popstate', handleInitialHash);
+      })();
+    </script>
+  )}
+</body>
+</html>
