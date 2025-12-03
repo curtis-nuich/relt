@@ -1,113 +1,97 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { faqContent } from "../content/faq.js";
+import Section from "../components/Section.astro";
+import FAQItem from "../components/FAQItem.astro";
 ---
 
 <BaseLayout
   title="FAQ - RELT"
   description="Frequently asked questions about RELT's English tutoring program for refugees and asylum seekers."
-  hasScrollSections={false}
 >
-  <div class="faq-container">
-    <h1>Frequently Asked Questions</h1>
+  <Section>
+    <div class="faq-container">
+      <h1>Frequently Asked Questions</h1>
 
-    {
-      faqContent.sections.map((section) => (
-        <div class="faq-section">
-          <h2>{section.category}</h2>
-          {section.questions.map((q) => (
-            <details class="faq-item">
-              <summary>{q.question}</summary>
-              <div class="faq-answer">
-                <p>{q.answer}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-      ))
-    }
-  </div>
+      <div class="faq-section">
+        <h2>For Students</h2>
+        <FAQItem
+          question="Is the tutoring really free?"
+          answer="Yes! All our tutoring sessions are completely free. RELT is supported by volunteers committed to helping you succeed."
+        />
+        <FAQItem
+          question="How do I sign up?"
+          answer="Complete our student application form and we'll contact you to discuss how we can help. We'll then match you with a tutor based on your needs and availability."
+        />
+        <FAQItem
+          question="Do I need to speak English already?"
+          answer="No! We welcome students at all English levels, from complete beginners to advanced learners looking to improve specific skills."
+        />
+        <FAQItem
+          question="What if I can't make a session?"
+          answer="We understand life happens. Just let your tutor know as soon as possible if you need to reschedule."
+        />
+        <FAQItem
+          question="Can sessions be online or in-person?"
+          answer="We offer both! Sessions can be conducted online via video call or in-person, depending on what works best for you and your tutor."
+        />
+      </div>
 
-  <style>
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: var(--spacing-xl) var(--spacing-md);
-    }
+      <div class="faq-section">
+        <h2>For Tutors</h2>
+        <FAQItem
+          question="Do I need teaching experience?"
+          answer="No formal teaching qualification is required. We provide training and resources to help you succeed. All you need is patience, empathy, and a willingness to connect."
+        />
+        <FAQItem
+          question="How much time do I need to commit?"
+          answer="We ask for 1 hour per week for at least 6 months to provide continuity for students."
+        />
+        <FAQItem
+          question="Are sessions in-person or online?"
+          answer="Sessions can be conducted online via video call or in-person, making it flexible and accessible for everyone."
+        />
+        <FAQItem
+          question="What support will I receive?"
+          answer="We provide initial training, ongoing support from our coordination team, and access to teaching resources and materials."
+        />
+        <FAQItem
+          question="What will I teach?"
+          answer="You'll focus on practical, conversational English tailored to your student's goals - whether that's everyday conversation, job applications, or specific skills."
+        />
+      </div>
 
-    h1 {
-      text-align: center;
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .faq-section {
-      margin-bottom: var(--spacing-xxl);
-    }
-
-    .faq-section h2 {
-      color: var(--primary-orange);
-      margin-bottom: var(--spacing-lg);
-      text-align: left;
-    }
-
-    .faq-item {
-      background: var(--bg-white);
-      border-radius: var(--border-radius);
-      margin-bottom: var(--spacing-md);
-      box-shadow: var(--shadow-light);
-    }
-
-    .faq-item summary {
-      padding: var(--spacing-md);
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-      position: relative;
-      padding-right: 40px;
-    }
-
-    .faq-item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-item summary::after {
-      content: "+";
-      position: absolute;
-      right: var(--spacing-md);
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-      color: var(--primary-orange);
-    }
-
-    .faq-item[open] summary::after {
-      content: "−";
-    }
-
-    .faq-item summary:hover {
-      color: var(--primary-orange);
-    }
-
-    .faq-answer {
-      padding: 0 var(--spacing-md) var(--spacing-md);
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .faq-answer {
-        animation: none;
-      }
-    }
-  </style>
+      <div class="faq-section">
+        <h2>General</h2>
+        <FAQItem
+          question="How does matching work?"
+          answer="Our coordination team carefully matches tutors with students based on availability, learning goals, and preferences to ensure a good fit."
+        />
+        <FAQItem
+          question="Can I participate if I'm not in Australia?"
+          answer="Our students are based in Australia, but tutors can participate from anywhere as long as they can commit to regular online sessions."
+        />
+      </div>
+    </div>
+  </Section>
 </BaseLayout>
+
+<style>
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-container h1 {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq-section {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq-section h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+  }
+</style>

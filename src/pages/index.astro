@@ -1,280 +1,420 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { homeContent } from "../content/home.js";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import StatsGrid from "../components/StatsGrid.astro";
 ---
 
 <BaseLayout
   title="RELT - Refugee English Language Tutoring Australia | Free English Classes for Refugees"
-  description="Free weekly one-on-one English tutoring for refugees and asylum seekers across Australia. Join our community of 120+ participants from 25+ countries."
-  hasScrollSections={false}
+  description="Free weekly one-on-one English tutoring for refugees and asylum seekers across Australia. Join our community of 200+ participants from 25+ countries."
 >
-  <div class="main-content">
-    <!-- Intro Section -->
-    <section class="intro-section" aria-labelledby="intro-heading">
-      <h1 class="visually-hidden" id="intro-heading">
-        About Refugee English Language Tutoring
+  <Section class="hero-section">
+    <div class="hero-container fade-in-up">
+      <h1 class="hero-title">
+        Empowering Refugees Through
+        <span class="highlight">English Language Learning</span>
       </h1>
-      <p class="intro-text">
+      <p class="hero-description">
         <span class="org-name">Refugee English Language Tutoring (RELT)</span> is
         a charity that offers weekly, one-on-one English tutoring to refugees and
         asylum seekers across Australia. RELT was founded in 2025 and has already
-        grown to support over 120 weekly participants from more than 25 countries.
+        grown to support over 200 weekly participants from more than 25 countries.
       </p>
-      <div class="stats" role="list" aria-label="RELT statistics">
-        {
-          homeContent.hero.stats.map((stat) => (
-            <div class="stat" role="listitem">
-              <span class="stat-number" aria-label={stat.number}>
-                {stat.number}
-              </span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))
-        }
-      </div>
-    </section>
+    </div>
+  </Section>
 
-    <!-- Get Involved Section -->
-    <section
-      class="get-involved-section"
-      aria-labelledby="get-involved-heading"
-    >
-      <h2 id="get-involved-heading">Get Involved</h2>
+  <Section class="stats-section">
+    <div class="stats-wrapper fade-in-up">
+      <h2 class="section-title">Our Community</h2>
+      <StatsGrid
+        stats={[
+          { number: "25+", label: "Countries Represented" },
+          { number: "30+", label: "Native Languages" },
+          { number: "21-65+", label: "Age Range" },
+        ]}
+      />
+    </div>
+  </Section>
 
-      <div class="action-cards">
-        <article class="card">
-          <h3>Become a Tutor</h3>
-          <p>
-            Share your knowledge and make a meaningful difference in someone's
-            life. Join our community of volunteer tutors.
-          </p>
+  <Section class="involvement-section">
+    <h2 class="section-title fade-in-up">Get Involved</h2>
+    <div class="cards-grid">
+      <Card class="action-card fade-in-up">
+        <div class="card-content-wrapper">
+          <div class="card-text">
+            <h3>Become a Tutor</h3>
+            <p>
+              Share your knowledge and make a meaningful difference in someone's
+              life. Join our community of volunteer tutors.
+            </p>
+          </div>
           <a
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUMVU1SVdPRk8yQkZDUFlFNVFPNkZKVDZNRC4u"
-            class="btn"
+            class="btn btn-card"
             aria-label="Apply to become a tutor"
           >
             Apply to Tutor
           </a>
-        </article>
+        </div>
+      </Card>
 
-        <article class="card">
-          <h3>Join as a Tutee</h3>
-          <p>
-            Improve your English skills with personalized, one-on-one tutoring
-            sessions tailored to your needs and goals.
-          </p>
+      <Card class="action-card fade-in-up">
+        <div class="card-content-wrapper">
+          <div class="card-text">
+            <h3>Join as a Tutee</h3>
+            <p>
+              Improve your English skills with personalized, one-on-one tutoring
+              sessions tailored to your needs and goals.
+            </p>
+          </div>
           <a
             href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUOUZMTTBEVzE4OFY0QUI1TDlJMDZOSVQwUy4u"
-            class="btn"
+            class="btn btn-card"
             aria-label="Apply for tutoring"
           >
             Apply for Tutoring
           </a>
-        </article>
+        </div>
+      </Card>
 
-        <article class="card">
-          <h3>Learn More</h3>
-          <div class="youtube-preview">
-            <iframe
-              src="https://www.youtube.com/embed/w1XvylJuTGw?list=PLzGJUMA3VO8EEz7ijNt0S6skaQdVXM2nh"
-              title="RELT YouTube Playlist"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
+      <Card class="action-card video-card fade-in-up">
+        <div class="card-content-wrapper">
+          <div class="card-text">
+            <h3>Learn More</h3>
+            <div class="youtube-embed">
+              <iframe
+                src="https://www.youtube.com/embed/w1XvylJuTGw?list=PLzGJUMA3VO8EEz7ijNt0S6skaQdVXM2nh"
+                title="RELT YouTube Playlist"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <p>
+              Watch our videos to learn more about RELT's mission and see our
+              tutoring in action.
+            </p>
           </div>
-          <p>
-            Watch our videos to learn more about RELT's mission and see our
-            tutoring in action.
-          </p>
           <a
             href="https://youtube.com/playlist?list=PLzGJUMA3VO8EEz7ijNt0S6skaQdVXM2nh&si=2EE_OD9E0lGZfLkp"
-            class="btn"
+            class="btn btn-card"
             aria-label="Watch RELT videos on YouTube"
             target="_blank"
             rel="noopener noreferrer"
           >
             Watch Videos
           </a>
-        </article>
+        </div>
+      </Card>
+    </div>
+
+    <Section class="contact-section">
+      <div class="contact-card fade-in-up">
+        <h2>Get in Touch</h2>
+        <p>Have questions or want to learn more about RELT?</p>
+        <a href="mailto:admin@reltutoring.org" class="email-link">
+          admin@reltutoring.org
+        </a>
       </div>
-    </section>
+    </Section>
 
-    <!-- Contact Section -->
-    <section
-      class="contact-section"
-      id="contact"
-      aria-labelledby="contact-heading"
-    >
-      <h2 id="contact-heading">Get in Touch</h2>
-      <p>Have questions or want to learn more about RELT?</p>
-      <a href="mailto:admin@reltutoring.org" class="email-link"
-        >admin@reltutoring.org</a
-      >
-    </section>
-  </div>
+    <style>
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary-light) 0%,
+          #fff 100%
+        );
+        padding: var(--space-3xl) 0 var(--space-2xl);
+      }
+
+      .hero-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.2;
+        margin-bottom: var(--space-xl);
+        color: var(--color-text-dark);
+      }
+
+      .highlight {
+        color: var(--color-primary);
+        display: inline-block;
+      }
+
+      .hero-description {
+        font-size: var(--text-lg);
+        line-height: 1.7;
+        color: var(--color-text-medium);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .org-name {
+        color: var(--color-primary);
+        font-weight: var(--font-semibold);
+      }
+
+      /* Stats Section */
+      .stats-section {
+        background: var(--color-bg-white);
+        padding: var(--space-2xl) 0;
+      }
+
+      .stats-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: var(--text-3xl);
+        text-align: center;
+        margin-bottom: var(--space-xl);
+        color: var(--color-text-dark);
+      }
+
+      /* Cards Section */
+      .involvement-section {
+        padding: var(--space-2xl) 0 var(--space-3xl);
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-2xl);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .action-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .card-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: var(--space-lg);
+      }
+
+      .card-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .action-card h3 {
+        color: var(--color-primary);
+        margin-bottom: var(--space-md);
+        font-size: var(--text-xl);
+      }
+
+      .action-card p {
+        margin-bottom: 0;
+        flex: 1;
+      }
+
+      .btn-card {
+        margin-top: auto;
+        width: 100%;
+      }
+
+      .youtube-embed {
+        width: 100%;
+        margin: var(--space-md) 0;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 56.25%;
+        background: #f0f0f0;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .youtube-embed iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: var(--space-3xl) 0;
+      }
+
+      .contact-card {
+        max-width: 90%;
+        margin: 0 auto;
+        background: var(--color-primary);
+        padding: var(--space-3xl) var(--space-2xl);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+      }
+
+      .contact-card h2 {
+        color: white;
+        margin-bottom: var(--space-md);
+        font-size: var(--text-3xl);
+      }
+
+      .contact-card p {
+        color: white;
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-xl);
+      }
+
+      .email-link {
+        display: inline-block;
+        font-size: var(--text-xl);
+        font-weight: var(--font-semibold);
+        color: var(--color-primary);
+        background: white;
+        padding: var(--space-md) var(--space-2xl);
+        border-radius: var(--radius-full);
+        transition: all var(--transition-base);
+      }
+
+      .email-link:hover,
+      .email-link:focus {
+        background: var(--color-primary-light);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Animations */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .fade-in-up:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .fade-in-up:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .fade-in-up:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .cards-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+        }
+
+        .contact-card {
+          max-width: 85%;
+          padding: var(--space-2xl) var(--space-xl);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: var(--space-2xl) 0 var(--space-xl);
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-description {
+          font-size: var(--text-base);
+        }
+
+        .cards-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-xl);
+          max-width: 500px;
+          margin: 0 auto;
+        }
+
+        .contact-card {
+          max-width: 95%;
+          padding: var(--space-2xl) var(--space-lg);
+        }
+
+        .stats-section {
+          padding: var(--space-xl) 0;
+        }
+
+        .involvement-section {
+          padding: var(--space-xl) 0 var(--space-2xl);
+        }
+
+        .contact-section {
+          padding: var(--space-2xl) 0;
+        }
+
+        .contact-card {
+          padding: var(--space-2xl) var(--space-lg);
+        }
+
+        .contact-card h2 {
+          font-size: var(--text-2xl);
+        }
+
+        .contact-card p {
+          font-size: var(--text-base);
+        }
+
+        .email-link {
+          font-size: var(--text-lg);
+          padding: var(--space-sm) var(--space-xl);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in-up {
+          animation: none;
+          opacity: 1;
+          transform: none;
+        }
+
+        .email-link:hover {
+          transform: none;
+        }
+      }
+    </style>
+
+    <script>
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in-up").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </Section>
 </BaseLayout>
-
-<style>
-  .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-xl) var(--spacing-md);
-  }
-
-  /* Intro Section - matches original */
-  .intro-section {
-    background: var(--bg-white);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
-  }
-
-  .intro-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-lg);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .org-name {
-    color: var(--primary-orange);
-    font-weight: 600;
-  }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-lg);
-    text-align: center;
-  }
-
-  .stat {
-    padding: var(--spacing-sm);
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-orange);
-    margin-bottom: 5px;
-  }
-
-  .stat-label {
-    font-size: 0.9rem;
-    color: var(--text-gray);
-  }
-
-  /* Get Involved Section - matches original */
-  .get-involved-section {
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .get-involved-section h2 {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .action-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .card {
-    background: var(--bg-white);
-    padding: 35px 25px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-heavy);
-  }
-
-  .card h3 {
-    margin-bottom: 12px;
-  }
-
-  .card p {
-    margin-bottom: var(--spacing-md);
-    flex-grow: 1;
-  }
-
-  .youtube-preview {
-    width: 100%;
-    margin-bottom: var(--spacing-md);
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    background: #f0f0f0;
-  }
-
-  .youtube-preview iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  /* Contact Section - matches original */
-  .contact-section {
-    background: var(--bg-white);
-    padding: 35px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    box-shadow: var(--shadow-light);
-  }
-
-  .contact-section p {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .email-link {
-    color: var(--primary-orange);
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.2s ease;
-  }
-
-  .email-link:hover,
-  .email-link:focus {
-    border-bottom-color: var(--primary-orange);
-    outline: none;
-  }
-
-  /* Mobile Responsive */
-  @media (max-width: 768px) {
-    .intro-section {
-      padding: 25px 20px;
-    }
-
-    .stat-number {
-      font-size: 1.6rem;
-    }
-
-    .card {
-      padding: 25px 20px;
-    }
-  }
-</style>

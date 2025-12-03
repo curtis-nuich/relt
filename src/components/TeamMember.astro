@@ -1,0 +1,59 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+}
+
+const { name, role, photo, bio } = Astro.props;
+---
+
+<article class="team-member">
+  <img src={photo} alt={name} class="photo" />
+  <h3>{name}</h3>
+  <p class="role">{role}</p>
+  <p class="bio">{bio}</p>
+</article>
+
+<style>
+  .team-member {
+    background: var(--color-bg-white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto var(--space-md);
+  }
+
+  .team-member h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .role {
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-md);
+  }
+
+  .bio {
+    text-align: left;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .team-member {
+      padding: var(--space-lg);
+    }
+  }
+</style>

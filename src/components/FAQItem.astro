@@ -1,0 +1,71 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<details class="faq-item">
+  <summary>{question}</summary>
+  <div class="answer">
+    <p>{answer}</p>
+  </div>
+</details>
+
+<style>
+  .faq-item {
+    background: var(--color-bg-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .faq-item summary {
+    padding: var(--space-md);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 50px;
+    transition: color var(--transition-base);
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-item summary:hover {
+    color: var(--color-primary);
+  }
+
+  .answer {
+    padding: 0 var(--space-md) var(--space-md);
+  }
+
+  .answer p {
+    margin-bottom: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-item summary::after {
+      transition: none;
+    }
+  }
+</style>

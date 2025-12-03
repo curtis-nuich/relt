@@ -1,0 +1,60 @@
+---
+interface Stat {
+  number: string;
+  label: string;
+}
+
+interface Props {
+  stats: Stat[];
+}
+
+const { stats } = Astro.props;
+---
+
+<div class="stats-grid">
+  {
+    stats.map((stat) => (
+      <div class="stat">
+        <span class="stat-number">{stat.number}</span>
+        <span class="stat-label">{stat.label}</span>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .stat {
+    padding: var(--space-md);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-medium);
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .stat-number {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

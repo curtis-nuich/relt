@@ -1,0 +1,75 @@
+---
+interface Props {
+  title?: string;
+  href?: string;
+  buttonText?: string;
+  class?: string;
+}
+
+const { title, href, buttonText, class: className } = Astro.props;
+---
+
+<article class:list={["card", className]}>
+  {title && <h3>{title}</h3>}
+
+  <div class="card-content">
+    <slot />
+  </div>
+
+  {
+    href && buttonText && (
+      <a href={href} class="btn">
+        {buttonText}
+      </a>
+    )
+  }
+</article>
+
+<style>
+  .card {
+    background: var(--color-bg-white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card h3 {
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-md);
+  }
+
+  .card-content {
+    flex-grow: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .card-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      padding: var(--space-lg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      transition: none;
+    }
+
+    .card:hover {
+      transform: none;
+    }
+  }
+</style>

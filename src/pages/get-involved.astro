@@ -1,145 +1,369 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ScrollSection from "../components/ScrollSection.astro";
-import ContentSection from "../components/ContentSection.astro";
-import { getInvolvedContent } from "../content/get-involved.js";
+import Section from "../components/Section.astro";
 ---
 
 <BaseLayout
   title="Get Involved - RELT"
   description="Join RELT as a tutor or student. Make a difference through English language education for refugees and asylum seekers."
-  hasScrollSections={true}
 >
-  <div class="page-intro">
-    <p class="intro-text">{getInvolvedContent.intro}</p>
-  </div>
+  <Section class="page-hero">
+    <div class="page-intro fade-in-up">
+      <h1>Get Involved</h1>
+      <p class="intro-text">
+        Get involved as a tutor or student, or consider partnering with us to
+        help support our program.
+      </p>
+    </div>
+  </Section>
 
-  {
-    getInvolvedContent.sections.map((section) => (
-      <ScrollSection id={section.id} title={section.title}>
-        <div class="section-content">
-          {section.tagline && <p class="tagline">{section.tagline}</p>}
+  <Section id="tutors" class="content-section">
+    <div class="content-block fade-in-up">
+      <div class="section-header">
+        <h2>Become a Tutor</h2>
+        <p class="tagline">
+          Make a Meaningful Difference, One Conversation at a Time
+        </p>
+      </div>
 
-          <p class="section-intro">{section.intro}</p>
+      <div class="section-body">
+        <p class="description">
+          By volunteering just one hour a week, you can make a profound impact
+          on a refugee's journey and help them feel more at home.
+        </p>
 
-          {section.description && (
-            <p class="section-description">{section.description}</p>
-          )}
+        <p class="description">
+          We provide training, as well as the support and resources you need to
+          feel confident as a tutor. So you don't need any tutoring experience,
+          just a willingness to connect with someone new!
+        </p>
 
-          {section.requirements && (
-            <div class="items-box">
-              <h3>{section.requirements.title}</h3>
-              <ul>
-                {section.requirements.items.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {section.benefits && (
-            <div class="items-box">
-              <h3>{section.benefits.title}</h3>
-              <ul>
-                {section.benefits.items.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {section.partnershipOptions && (
-            <div class="items-box">
-              <ul>
-                {section.partnershipOptions.map((option) => (
-                  <li>{option}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {section.applicationProcess && (
-            <p class="application-note">{section.applicationProcess}</p>
-          )}
-
-          {section.closingText && (
-            <p class="closing-text">{section.closingText}</p>
-          )}
-
-          {section.cta && (
-            <div class="cta-center">
-              <a href={section.cta.link} class="btn">
-                {section.cta.text}
-              </a>
-            </div>
-          )}
+        <div class="info-box">
+          <h3>What We're Looking For</h3>
+          <ul>
+            <li>Commitment to 1 hour per week for at least 6 months</li>
+            <li>Patience, empathy, and cultural sensitivity</li>
+            <li>Reliable internet connection for online sessions</li>
+            <li>No formal teaching qualification required</li>
+          </ul>
         </div>
-      </ScrollSection>
-    ))
-  }
+
+        <p class="application-note">
+          To apply, fill out this application and a member of our team will
+          contact you when we next intake tutors.
+        </p>
+
+        <div class="cta-center">
+          <a
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUMVU1SVdPRk8yQkZDUFlFNVFPNkZKVDZNRC4u"
+            class="btn btn-large"
+          >
+            Apply to Tutor
+          </a>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <Section id="students" class="content-section alt-bg">
+    <div class="content-block fade-in-up">
+      <div class="section-header">
+        <h2>Become a Student</h2>
+        <p class="tagline">Learn English. Grow Confidence. Feel at Home</p>
+      </div>
+
+      <div class="section-body">
+        <p class="description">
+          Improving your English can open doors to jobs, education and
+          friendships.
+        </p>
+
+        <p class="description">
+          Whether you're just starting out or you want to get better at
+          conversation, our friendly volunteer tutors will support your goals,
+          at your pace… for free!
+        </p>
+
+        <div class="info-box">
+          <h3>What You'll Get</h3>
+          <ul>
+            <li>Free one-on-one English tutoring every week</li>
+            <li>Flexible scheduling to fit your life</li>
+            <li>Supportive tutor matched to your needs</li>
+            <li>Focus on practical English for daily life</li>
+          </ul>
+        </div>
+
+        <p class="application-note">
+          To apply, fill out this form and a member of our team will contact you
+          to discuss how we can help.
+        </p>
+
+        <div class="cta-center">
+          <a
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUOUZMTTBEVzE4OFY0QUI1TDlJMDZOSVQwUy4u"
+            class="btn btn-large"
+          >
+            Apply for Tutoring
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <Section id="partners" class="content-section">
+      <div class="content-block fade-in-up">
+        <div class="section-header">
+          <h2>Partner With Us</h2>
+          <p class="tagline">Together, We Can Reach More People</p>
+        </div>
+
+        <div class="section-body">
+          <p class="description">
+            Are you a community group, refugee support service, education
+            provider, non-profit, or business that shares our mission?
+          </p>
+
+          <p class="description">
+            We're always looking to collaborate with organizations who can help:
+          </p>
+
+          <div class="info-box">
+            <ul>
+              <li>Refer students or volunteers</li>
+              <li>Support our training and outreach</li>
+              <li>Co-design programs or provide in-kind support</li>
+              <li>Create innovative ways to help refugees</li>
+            </ul>
+          </div>
+
+          <p class="closing-text">
+            Whether you're a grassroots group or a national organization, please
+            get in touch with us so we can explore how we can work together.
+          </p>
+
+          <div class="cta-center">
+            <a href="mailto:admin@reltutoring.org" class="btn btn-large">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <style>
+      .page-hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary-light) 0%,
+          #fff 100%
+        );
+        padding: var(--space-3xl) 0;
+      }
+
+      .page-intro {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .page-intro h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: var(--space-md);
+        color: var(--color-text-dark);
+      }
+
+      .intro-text {
+        font-size: var(--text-xl);
+        color: var(--color-text-medium);
+        line-height: 1.6;
+      }
+
+      .content-section {
+        padding: var(--space-3xl) 0;
+      }
+
+      .alt-bg {
+        background: var(--color-bg-white);
+      }
+
+      .content-block {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: var(--space-2xl);
+      }
+
+      .section-header h2 {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--space-md);
+        color: var(--color-text-dark);
+      }
+
+      .tagline {
+        font-size: var(--text-xl);
+        font-weight: var(--font-semibold);
+        color: var(--color-primary);
+        margin: 0;
+      }
+
+      .section-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+      }
+
+      .description {
+        font-size: var(--text-lg);
+        text-align: center;
+        line-height: 1.7;
+        color: var(--color-text-medium);
+        margin: 0;
+      }
+
+      .info-box {
+        background: var(--color-bg-white);
+        padding: var(--space-2xl);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        border-left: 4px solid var(--color-primary);
+        margin: var(--space-lg) 0;
+      }
+
+      .alt-bg .info-box {
+        background: var(--color-bg-primary);
+      }
+
+      .info-box h3 {
+        color: var(--color-primary);
+        margin-bottom: var(--space-lg);
+        font-size: var(--text-xl);
+      }
+
+      .info-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .info-box li {
+        padding: var(--space-sm) 0 var(--space-sm) var(--space-xl);
+        position: relative;
+        line-height: 1.6;
+        color: var(--color-text-medium);
+      }
+
+      .info-box li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-primary);
+        font-weight: var(--font-bold);
+        font-size: var(--text-lg);
+      }
+
+      .application-note,
+      .closing-text {
+        font-size: var(--text-base);
+        text-align: center;
+        color: var(--color-text-medium);
+        font-style: italic;
+        margin: 0;
+      }
+
+      .cta-center {
+        text-align: center;
+        margin-top: var(--space-xl);
+      }
+
+      .btn-large {
+        padding: var(--space-md) var(--space-2xl);
+        font-size: var(--text-lg);
+        min-width: 200px;
+      }
+
+      /* Animations */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .page-hero {
+          padding: var(--space-2xl) 0;
+        }
+
+        .page-intro h1 {
+          font-size: 2rem;
+        }
+
+        .intro-text {
+          font-size: var(--text-lg);
+        }
+
+        .content-section {
+          padding: var(--space-2xl) 0;
+        }
+
+        .section-header h2 {
+          font-size: var(--text-2xl);
+        }
+
+        .tagline {
+          font-size: var(--text-lg);
+        }
+
+        .description {
+          font-size: var(--text-base);
+        }
+
+        .info-box {
+          padding: var(--space-lg);
+        }
+
+        .btn-large {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in-up {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+
+    <script>
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in-up").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </Section>
 </BaseLayout>
-
-<style>
-  .page-intro {
-    max-width: 800px;
-    margin: 0 auto var(--spacing-xxl);
-    text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md) 0;
-  }
-
-  .intro-text {
-    font-size: 1.2rem;
-    color: var(--text-gray);
-  }
-
-  .section-content {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .tagline {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--primary-orange);
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .section-intro,
-  .section-description,
-  .application-note,
-  .closing-text {
-    font-size: 1.1rem;
-    text-align: center;
-    margin-bottom: var(--spacing-md);
-    color: var(--text-gray);
-  }
-
-  .items-box {
-    background: var(--bg-white);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    margin: var(--spacing-lg) 0;
-  }
-
-  .items-box h3 {
-    color: var(--primary-orange);
-    margin-bottom: var(--spacing-md);
-  }
-
-  ul {
-    list-style-position: inside;
-    color: var(--text-gray);
-  }
-
-  li {
-    padding: var(--spacing-xs) 0;
-    line-height: 1.6;
-  }
-
-  .cta-center {
-    text-align: center;
-    margin-top: var(--spacing-xl);
-  }
-</style>
