@@ -24,6 +24,16 @@ import StatsGrid from "../components/StatsGrid.astro";
     </div>
   </Section>
 
+  <Section class="image-section">
+    <div class="image-container fade-in-up">
+      <img
+        src="public/chatting.svg"
+        alt="Community illustration"
+        class="center-image"
+      />
+    </div>
+  </Section>
+
   <Section class="stats-section">
     <div class="stats-wrapper fade-in-up">
       <h2 class="section-title">Our Community</h2>
@@ -108,7 +118,6 @@ import StatsGrid from "../components/StatsGrid.astro";
         </div>
       </Card>
     </div>
-
     <Section class="contact-section">
       <div class="contact-card fade-in-up">
         <h2>Get in Touch</h2>
@@ -120,13 +129,38 @@ import StatsGrid from "../components/StatsGrid.astro";
     </Section>
 
     <style>
-      .hero-section {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary-light) 0%,
-          #fff 100%
-        );
+      :global(.hero-section) {
+        position: relative;
+        background-image:
+          linear-gradient(rgba(241, 110, 39, 0.06) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(241, 110, 39, 0.06) 2px, transparent 2px);
+        background-size: 40px 40px;
+        background-color: var(--color-primary-light);
         padding: var(--space-3xl) 0 var(--space-2xl);
+      }
+
+      :global(.hero-section::after) {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--color-bg-primary)
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .hero-container {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
       }
 
       .hero-container {
@@ -136,8 +170,10 @@ import StatsGrid from "../components/StatsGrid.astro";
       }
 
       .hero-title {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.2;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
         margin-bottom: var(--space-xl);
         color: var(--color-text-dark);
       }
@@ -160,6 +196,11 @@ import StatsGrid from "../components/StatsGrid.astro";
         font-weight: var(--font-semibold);
       }
 
+      .image-section {
+        padding: var(--space-2xl) 0;
+        background: var(--color-bg-white);
+      }
+
       /* Stats Section */
       .stats-section {
         background: var(--color-bg-white);
@@ -176,6 +217,21 @@ import StatsGrid from "../components/StatsGrid.astro";
         text-align: center;
         margin-bottom: var(--space-xl);
         color: var(--color-text-dark);
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: var(--color-primary);
+        border-radius: 2px;
       }
 
       /* Cards Section */
@@ -185,16 +241,24 @@ import StatsGrid from "../components/StatsGrid.astro";
 
       .cards-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: var(--space-2xl);
         max-width: 1200px;
         margin: 0 auto;
       }
 
-      .action-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+      .action-card :global(.card) {
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition:
+          transform var(--transition-base),
+          box-shadow var(--transition-base);
+      }
+
+      .action-card :global(.card:hover) {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow:
+          0 12px 24px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(241, 110, 39, 0.1);
       }
 
       .card-content-wrapper {
@@ -224,6 +288,20 @@ import StatsGrid from "../components/StatsGrid.astro";
       .btn-card {
         margin-top: auto;
         width: 100%;
+        padding: var(--space-md) var(--space-2xl);
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-primary-dark) 100%
+        );
+        box-shadow: 0 4px 14px rgba(241, 110, 39, 0.25);
+        font-size: 1.0625rem;
+        letter-spacing: 0.01em;
+      }
+
+      .btn-card:hover,
+      .btn-card:focus {
+        box-shadow: 0 6px 20px rgba(241, 110, 39, 0.35);
       }
 
       .youtube-embed {
@@ -252,7 +330,7 @@ import StatsGrid from "../components/StatsGrid.astro";
       }
 
       .contact-card {
-        max-width: 90%;
+        max-width: 900px;
         margin: 0 auto;
         background: var(--color-primary);
         padding: var(--space-3xl) var(--space-2xl);
@@ -282,6 +360,23 @@ import StatsGrid from "../components/StatsGrid.astro";
         padding: var(--space-md) var(--space-2xl);
         border-radius: var(--radius-full);
         transition: all var(--transition-base);
+        position: relative;
+      }
+
+      .email-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--color-primary);
+        transition: width 0.3s ease;
+      }
+
+      .email-link:hover::after {
+        width: calc(100% - var(--space-2xl) * 2);
       }
 
       .email-link:hover,
@@ -320,13 +415,7 @@ import StatsGrid from "../components/StatsGrid.astro";
       /* Responsive */
       @media (max-width: 1024px) {
         .cards-grid {
-          grid-template-columns: 1fr;
-          max-width: 500px;
-        }
-
-        .contact-card {
-          max-width: 85%;
-          padding: var(--space-2xl) var(--space-xl);
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
       }
 
@@ -348,11 +437,6 @@ import StatsGrid from "../components/StatsGrid.astro";
           gap: var(--space-xl);
           max-width: 500px;
           margin: 0 auto;
-        }
-
-        .contact-card {
-          max-width: 95%;
-          padding: var(--space-2xl) var(--space-lg);
         }
 
         .stats-section {
@@ -383,6 +467,10 @@ import StatsGrid from "../components/StatsGrid.astro";
           font-size: var(--text-lg);
           padding: var(--space-sm) var(--space-xl);
         }
+
+        .action-card :global(.card:hover) {
+          transform: translateY(-4px);
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -392,8 +480,13 @@ import StatsGrid from "../components/StatsGrid.astro";
           transform: none;
         }
 
-        .email-link:hover {
+        .email-link:hover,
+        .action-card :global(.card:hover) {
           transform: none;
+        }
+
+        .email-link::after {
+          transition: none;
         }
       }
     </style>
