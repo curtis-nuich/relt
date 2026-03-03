@@ -30,10 +30,8 @@ jobs:
 
       - name: Copy root files to dist
         run: |
-          cp index.html dist/
-          cp style.css dist/
-          cp *.png dist/ || true
           cp CNAME dist/
+          cp *.png dist/ || true
           cp favicon-*.png dist/ || true
 
       - name: Upload artifact
