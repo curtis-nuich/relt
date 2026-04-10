@@ -109,6 +109,33 @@ import TeamMember from "../components/TeamMember.astro";
           bio="Jack is currently working as a commercial lawyer in Sydney, having joined RELT in November 2024 following an internship at the United Nations Office of the High Commissioner of Human Rights."
         />
       </div>
+
+      <div class="fade-in-up">
+        <TeamMember
+          name="Moh Moh T."
+          role="Working Group Member"
+          photo="/MohMohT.jpeg"
+          bio="Moh holds a Master of Development Studies from UNSW and works closely with refugee and asylum seeker communities to promote empowerment and inclusive development. She is passionate about using language as a tool to build confidence, trust, and a sense of belonging."
+        />
+      </div>
+
+      <div class="fade-in-up">
+        <TeamMember
+          name="Reeve M."
+          role="Working Group Member"
+          photo="/ReeveM.jpeg"
+          bio="Reeve is the Fundraising and Compliance Lead at RELT, having joined in February 2025. He is a Research Affiliate of the University of Sydney Law School and works as a solicitor at Allens, with a keen interest in social equity and compliance."
+        />
+      </div>
+
+      <div class="fade-in-up">
+        <TeamMember
+          name="Akanksha A."
+          role="Working Group Member"
+          photo="/AkankshaA.jpeg"
+          bio="Akanksha is an interaction designer and researcher based in Sydney with a background in psychology and digital design, currently completing a Master of Interaction Design at the University of Sydney. She supports RELT's branding, design systems, and communications, and is passionate about how thoughtful design can foster inclusion and belonging."
+        />
+      </div>
     </div>
 
     <p class="volunteers-note fade-in-up">
@@ -222,15 +249,6 @@ import TeamMember from "../components/TeamMember.astro";
 </BaseLayout>
 
 <style>
-  .page-hero {
-    background: linear-gradient(
-      135deg,
-      var(--color-primary-light) 0%,
-      #fff 100%
-    );
-    padding: var(--space-3xl) 0;
-  }
-
   .story-container {
     max-width: 800px;
     margin: 0 auto;
@@ -280,7 +298,7 @@ import TeamMember from "../components/TeamMember.astro";
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-2xl);
     margin-bottom: var(--space-2xl);
     max-width: 1200px;
@@ -450,17 +468,7 @@ import TeamMember from "../components/TeamMember.astro";
   /* Responsive */
   @media (max-width: 1024px) {
     .team-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .team-grid > div:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    .team-grid > div:last-child:nth-child(3n + 1) {
-      grid-column: auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
@@ -492,8 +500,6 @@ import TeamMember from "../components/TeamMember.astro";
 
     .team-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-xl);
-      max-width: 500px;
     }
 
     .contact-header h2 {
