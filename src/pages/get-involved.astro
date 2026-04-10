@@ -9,11 +9,67 @@ import Section from "../components/Section.astro";
 >
   <Section class="page-hero">
     <div class="page-intro fade-in-up">
-      <h1>Get Involved</h1>
+      <h1><span class="page-heading">Get Involved</span></h1>
       <p class="intro-text">
         Get involved as a tutor or student, or consider partnering with us to
         help support our program.
       </p>
+    </div>
+  </Section>
+
+  <Section class="image-section">
+    <div class="image-container fade-in-up">
+      <img
+        src="/shared-workspace.svg"
+        alt="Community illustration"
+        class="center-image"
+      />
+    </div>
+  </Section>
+
+  <Section id="students" class="content-section alt-bg">
+    <div class="content-block fade-in-up">
+      <div class="section-header">
+        <h2>Become a Student</h2>
+        <p class="tagline">Learn English. Grow Confidence. Feel at Home</p>
+      </div>
+
+      <div class="section-body">
+        <p class="description">
+          Improving your English can open doors to jobs, education and
+          friendships.
+        </p>
+
+        <p class="description">
+          Whether you're just starting out or you want to get better at
+          conversation, our friendly volunteer tutors will support your goals,
+          at your pace… for free!
+        </p>
+
+        <div class="info-box">
+          <h3>What You'll Get</h3>
+          <ul>
+            <li>Free one-on-one English tutoring every week</li>
+            <li>Flexible scheduling to fit your life</li>
+            <li>Supportive tutor matched to your needs</li>
+            <li>Focus on practical English for daily life</li>
+          </ul>
+        </div>
+
+        <p class="application-note">
+          To apply, fill out this form and a member of our team will contact you
+          to discuss how we can help.
+        </p>
+
+        <div class="cta-center">
+          <a
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUOUZMTTBEVzE4OFY0QUI1TDlJMDZOSVQwUy4u"
+            class="btn btn-large"
+          >
+            Apply for Tutoring
+          </a>
+        </div>
+      </div>
     </div>
   </Section>
 
@@ -65,305 +121,259 @@ import Section from "../components/Section.astro";
     </div>
   </Section>
 
-  <Section id="students" class="content-section alt-bg">
+  <Section id="partners" class="content-section alt-bg">
     <div class="content-block fade-in-up">
       <div class="section-header">
-        <h2>Become a Student</h2>
-        <p class="tagline">Learn English. Grow Confidence. Feel at Home</p>
+        <h2>Partner With Us</h2>
+        <p class="tagline">Together, We Can Reach More People</p>
       </div>
 
       <div class="section-body">
         <p class="description">
-          Improving your English can open doors to jobs, education and
-          friendships.
+          Are you a community group, refugee support service, education
+          provider, non-profit, or business that shares our mission?
         </p>
 
         <p class="description">
-          Whether you're just starting out or you want to get better at
-          conversation, our friendly volunteer tutors will support your goals,
-          at your pace… for free!
+          We're always looking to collaborate with organizations who can help:
         </p>
 
         <div class="info-box">
-          <h3>What You'll Get</h3>
           <ul>
-            <li>Free one-on-one English tutoring every week</li>
-            <li>Flexible scheduling to fit your life</li>
-            <li>Supportive tutor matched to your needs</li>
-            <li>Focus on practical English for daily life</li>
+            <li>Refer students or volunteers</li>
+            <li>Support our training and outreach</li>
+            <li>Co-design programs or provide in-kind support</li>
+            <li>Create innovative ways to help refugees</li>
           </ul>
         </div>
 
-        <p class="application-note">
-          To apply, fill out this form and a member of our team will contact you
-          to discuss how we can help.
+        <p class="closing-text">
+          Whether you're a grassroots group or a national organization, please
+          get in touch with us so we can explore how we can work together.
         </p>
 
         <div class="cta-center">
-          <a
-            href="https://forms.office.com/Pages/ResponsePage.aspx?id=5huHn-nQ3UukAgmDZWJ4zz6wKn81NeBDtOjy-wbbqMVUOUZMTTBEVzE4OFY0QUI1TDlJMDZOSVQwUy4u"
-            class="btn btn-large"
-          >
-            Apply for Tutoring
+          <a href="mailto:admin@reltutoring.org" class="btn btn-large">
+            Contact Us
           </a>
         </div>
       </div>
     </div>
-
-    <Section id="partners" class="content-section">
-      <div class="content-block fade-in-up">
-        <div class="section-header">
-          <h2>Partner With Us</h2>
-          <p class="tagline">Together, We Can Reach More People</p>
-        </div>
-
-        <div class="section-body">
-          <p class="description">
-            Are you a community group, refugee support service, education
-            provider, non-profit, or business that shares our mission?
-          </p>
-
-          <p class="description">
-            We're always looking to collaborate with organizations who can help:
-          </p>
-
-          <div class="info-box">
-            <ul>
-              <li>Refer students or volunteers</li>
-              <li>Support our training and outreach</li>
-              <li>Co-design programs or provide in-kind support</li>
-              <li>Create innovative ways to help refugees</li>
-            </ul>
-          </div>
-
-          <p class="closing-text">
-            Whether you're a grassroots group or a national organization, please
-            get in touch with us so we can explore how we can work together.
-          </p>
-
-          <div class="cta-center">
-            <a href="mailto:admin@reltutoring.org" class="btn btn-large">
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </div>
-    </Section>
-
-    <style>
-      .page-hero {
-        background: linear-gradient(
-          135deg,
-          var(--color-primary-light) 0%,
-          #fff 100%
-        );
-        padding: var(--space-3xl) 0;
-      }
-
-      .page-intro {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .page-intro h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        margin-bottom: var(--space-md);
-        color: var(--color-text-dark);
-      }
-
-      .intro-text {
-        font-size: var(--text-xl);
-        color: var(--color-text-medium);
-        line-height: 1.6;
-      }
-
-      .content-section {
-        padding: var(--space-3xl) 0;
-      }
-
-      .alt-bg {
-        background: var(--color-bg-white);
-      }
-
-      .content-block {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: var(--space-2xl);
-      }
-
-      .section-header h2 {
-        font-size: var(--text-3xl);
-        margin-bottom: var(--space-md);
-        color: var(--color-text-dark);
-      }
-
-      .tagline {
-        font-size: var(--text-xl);
-        font-weight: var(--font-semibold);
-        color: var(--color-primary);
-        margin: 0;
-      }
-
-      .section-body {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-lg);
-      }
-
-      .description {
-        font-size: var(--text-lg);
-        text-align: center;
-        line-height: 1.7;
-        color: var(--color-text-medium);
-        margin: 0;
-      }
-
-      .info-box {
-        background: var(--color-bg-white);
-        padding: var(--space-2xl);
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-md);
-        border-left: 4px solid var(--color-primary);
-        margin: var(--space-lg) 0;
-      }
-
-      .alt-bg .info-box {
-        background: var(--color-bg-primary);
-      }
-
-      .info-box h3 {
-        color: var(--color-primary);
-        margin-bottom: var(--space-lg);
-        font-size: var(--text-xl);
-      }
-
-      .info-box ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .info-box li {
-        padding: var(--space-sm) 0 var(--space-sm) var(--space-xl);
-        position: relative;
-        line-height: 1.6;
-        color: var(--color-text-medium);
-      }
-
-      .info-box li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--color-primary);
-        font-weight: var(--font-bold);
-        font-size: var(--text-lg);
-      }
-
-      .application-note,
-      .closing-text {
-        font-size: var(--text-base);
-        text-align: center;
-        color: var(--color-text-medium);
-        font-style: italic;
-        margin: 0;
-      }
-
-      .cta-center {
-        text-align: center;
-        margin-top: var(--space-xl);
-      }
-
-      .btn-large {
-        padding: var(--space-md) var(--space-2xl);
-        font-size: var(--text-lg);
-        min-width: 200px;
-      }
-
-      /* Animations */
-      .fade-in-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition:
-          opacity 0.6s ease,
-          transform 0.6s ease;
-      }
-
-      .fade-in-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        .page-hero {
-          padding: var(--space-2xl) 0;
-        }
-
-        .page-intro h1 {
-          font-size: 2rem;
-        }
-
-        .intro-text {
-          font-size: var(--text-lg);
-        }
-
-        .content-section {
-          padding: var(--space-2xl) 0;
-        }
-
-        .section-header h2 {
-          font-size: var(--text-2xl);
-        }
-
-        .tagline {
-          font-size: var(--text-lg);
-        }
-
-        .description {
-          font-size: var(--text-base);
-        }
-
-        .info-box {
-          padding: var(--space-lg);
-        }
-
-        .btn-large {
-          width: 100%;
-          max-width: 100%;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .fade-in-up {
-          transition: none;
-          opacity: 1;
-          transform: none;
-        }
-      }
-    </style>
-
-    <script>
-      const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -100px 0px",
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".fade-in-up").forEach((el) => {
-        observer.observe(el);
-      });
-    </script>
   </Section>
 </BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-light) 0%,
+      #fff 100%
+    );
+    padding: var(--space-3xl) 0;
+  }
+
+  .page-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .page-intro h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-md);
+    color: var(--color-text-dark);
+  }
+
+  .intro-text {
+    font-size: var(--text-xl);
+    color: var(--color-text-medium);
+    line-height: 1.6;
+  }
+
+  .content-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .alt-bg {
+    background: var(--color-bg-white);
+  }
+
+  .content-block {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-text-dark);
+  }
+
+  .tagline {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .section-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .description {
+    font-size: var(--text-lg);
+    text-align: center;
+    line-height: 1.7;
+    color: var(--color-text-medium);
+    margin: 0;
+  }
+
+  .info-box {
+    background: var(--color-bg-white);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--color-primary);
+    margin: var(--space-lg) 0;
+  }
+
+  .alt-bg .info-box {
+    background: var(--color-bg-primary);
+  }
+
+  .info-box h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    font-size: var(--text-xl);
+  }
+
+  .info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-box li {
+    padding: var(--space-sm) 0 var(--space-sm) var(--space-xl);
+    position: relative;
+    line-height: 1.6;
+    color: var(--color-text-medium);
+  }
+
+  .info-box li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+  }
+
+  .application-note,
+  .closing-text {
+    font-size: var(--text-base);
+    text-align: center;
+    color: var(--color-text-medium);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .cta-center {
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+
+  .btn-large {
+    padding: var(--space-md) var(--space-2xl);
+    font-size: var(--text-lg);
+    min-width: 200px;
+  }
+
+  /* Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: var(--space-2xl) 0;
+    }
+
+    .page-intro h1 {
+      font-size: 2rem;
+    }
+
+    .intro-text {
+      font-size: var(--text-lg);
+    }
+
+    .content-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .section-header h2 {
+      font-size: var(--text-2xl);
+    }
+
+    .tagline {
+      font-size: var(--text-lg);
+    }
+
+    .description {
+      font-size: var(--text-base);
+    }
+
+    .info-box {
+      padding: var(--space-lg);
+    }
+
+    .btn-large {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-in-up {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".fade-in-up").forEach((el) => {
+    observer.observe(el);
+  });
+</script>

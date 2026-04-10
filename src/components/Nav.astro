@@ -41,6 +41,7 @@ const navItems = [
       })
     }
   </ul>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 </nav>
 
 <style>
@@ -172,18 +173,40 @@ const navItems = [
       transition: none;
     }
   }
+
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+  }
+
+  @media (max-width: 768px) {
+    .nav-backdrop.open {
+      display: block;
+    }
+  }
 </style>
 
 <script>
   // @ts-nocheck
   const menuToggle = document.querySelector(".mobile-toggle");
   const navList = document.querySelector(".nav-list");
+  const backdrop = document.getElementById("nav-backdrop");
+
+  const closeNav = () => {
+    menuToggle.setAttribute("aria-expanded", "false");
+    navList.classList.remove("open");
+    backdrop.classList.remove("open");
+  };
 
   if (menuToggle && navList) {
     menuToggle.addEventListener("click", () => {
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", String(!isExpanded));
       navList.classList.toggle("open");
+      backdrop.classList.toggle("open");
 
       if (!isExpanded) {
         const firstLink = navList.querySelector("a");
@@ -191,25 +214,27 @@ const navItems = [
       }
     });
 
+    backdrop.addEventListener("click", () => {
+      closeNav();
+      menuToggle.focus();
+    });
+
     document.addEventListener("click", (e) => {
       if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
-        menuToggle.setAttribute("aria-expanded", "false");
-        navList.classList.remove("open");
+        closeNav();
       }
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && navList.classList.contains("open")) {
-        menuToggle.setAttribute("aria-expanded", "false");
-        navList.classList.remove("open");
+        closeNav();
         menuToggle.focus();
       }
     });
 
     navList.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
-        menuToggle.setAttribute("aria-expanded", "false");
-        navList.classList.remove("open");
+        closeNav();
       });
     });
   }

@@ -273,3 +273,13 @@ li {
     max-width: 100%;
   }
 }
+
+.page-heading {
+  display: inline-block;
+  position: relative;
+  color: white;
+  background: var(--color-primary);
+  padding: 6px 20px;
+  transform: rotate(-1.5deg);
+  box-shadow: 4px 5px 0px var(--color-primary-dark);
+}

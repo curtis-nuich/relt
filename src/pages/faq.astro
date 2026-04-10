@@ -10,31 +10,17 @@ import FAQItem from "../components/FAQItem.astro";
 >
   <Section>
     <div class="faq-container">
-      <h1>Frequently Asked Questions</h1>
+      <h1><span class="page-heading">Frequently Asked Questions</span></h1>
 
-      <div class="faq-section">
-        <h2>For Students</h2>
-        <FAQItem
-          question="Is the tutoring really free?"
-          answer="Yes! All our tutoring sessions are completely free. RELT is supported by volunteers committed to helping you succeed."
-        />
-        <FAQItem
-          question="How do I sign up?"
-          answer="Complete our student application form and we'll contact you to discuss how we can help. We'll then match you with a tutor based on your needs and availability."
-        />
-        <FAQItem
-          question="Do I need to speak English already?"
-          answer="No! We welcome students at all English levels, from complete beginners to advanced learners looking to improve specific skills."
-        />
-        <FAQItem
-          question="What if I can't make a session?"
-          answer="We understand life happens. Just let your tutor know as soon as possible if you need to reschedule."
-        />
-        <FAQItem
-          question="Can sessions be online or in-person?"
-          answer="We offer both! Sessions can be conducted online via video call or in-person, depending on what works best for you and your tutor."
-        />
-      </div>
+      <Section class="image-section">
+        <div class="image-container fade-in-up">
+          <img
+            src="/questions.svg"
+            alt="Community illustration"
+            class="center-image"
+          />
+        </div>
+      </Section>
 
       <div class="faq-section">
         <h2>For Tutors</h2>
@@ -61,6 +47,30 @@ import FAQItem from "../components/FAQItem.astro";
       </div>
 
       <div class="faq-section">
+        <h2>For Students</h2>
+        <FAQItem
+          question="Is the tutoring really free?"
+          answer="Yes! All our tutoring sessions are completely free. RELT is supported by volunteers committed to helping you succeed."
+        />
+        <FAQItem
+          question="How do I sign up?"
+          answer="Complete our student application form and we'll contact you to discuss how we can help. We'll then match you with a tutor based on your needs and availability."
+        />
+        <FAQItem
+          question="Do I need to speak English already?"
+          answer="No! We welcome students at all English levels, from complete beginners to advanced learners looking to improve specific skills."
+        />
+        <FAQItem
+          question="What if I can't make a session?"
+          answer="We understand life happens. Just let your tutor know as soon as possible if you need to reschedule."
+        />
+        <FAQItem
+          question="Can sessions be online or in-person?"
+          answer="We offer both! Sessions can be conducted online via video call or in-person, depending on what works best for you and your tutor."
+        />
+      </div>
+
+      <div class="faq-section">
         <h2>General</h2>
         <FAQItem
           question="How does matching work?"
@@ -68,7 +78,7 @@ import FAQItem from "../components/FAQItem.astro";
         />
         <FAQItem
           question="Can I participate if I'm not in Australia?"
-          answer="Our students are based in Australia, but tutors can participate from anywhere as long as they can commit to regular online sessions."
+          answer="We currently only accept tutors and tutees based in Australia. We plan on expanding internationally in due course."
         />
       </div>
     </div>
